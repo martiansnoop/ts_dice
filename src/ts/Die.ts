@@ -1,6 +1,6 @@
 module dice {
     export class Die {
-        sides:number;
+        private sides:number;
         constructor(sides:number) {
             this.sides = sides;
         }
