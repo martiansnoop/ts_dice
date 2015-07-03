@@ -14,8 +14,6 @@ module dice {
         }
     }
 
-
-    //1d20 + 10; 1d10+5
     export class Roller {
         private die:Die;
         private modifier:number;
@@ -25,21 +23,21 @@ module dice {
         }
 
         roll() {
-            return new SingleRoll(this.die.roll(), this.modifier);
+            return new Result(this.die.roll(), this.modifier);
         }
     }
 
-    class SingleRoll {
-        private result:number;
+    class Result {
+        private dieRoll:number;
         private modifier:number;
 
-        constructor(result, modifier) {
-            this.result = result;
+        constructor(dieRoll, modifier) {
+            this.dieRoll = dieRoll;
             this.modifier = modifier;
         }
 
         get total() {
-            return this.result + this.modifier;
+            return this.dieRoll + this.modifier;
         }
     }
 }
