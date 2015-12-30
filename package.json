@@ -7,12 +7,12 @@
     "test": "test"
   },
   "devDependencies": {
-    "jasmine-core": "^2.3.4",
-    "karma": "^0.12.37",
-    "karma-chrome-launcher": "^0.2.0",
-    "karma-jasmine": "^0.3.5",
-    "typescript": "^1.4.1",
-    "karma-typescript-preprocessor": "^0.0.19"
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.16",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-jasmine": "^0.3.6",
+    "karma-typescript-preprocessor": "0.0.21",
+    "typescript": "^1.7.5"
   },
   "scripts": {
     "test": "karma start karma.conf.js"
