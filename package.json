@@ -18,5 +18,8 @@
     "test": "karma start karma.conf.js"
   },
   "author": "Emily Wenberg",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "react": "^0.14.5"
+  }
 }
