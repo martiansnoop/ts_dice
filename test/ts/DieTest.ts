@@ -1,6 +1,3 @@
-///<reference path="../../typings/jasmine/jasmine.d.ts"/>
-///<reference path="../../src/ts/Die.ts"/>
-
 import Die = dice.Die;
 import Roller = dice.Roller;
 
