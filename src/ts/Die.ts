@@ -1,4 +1,4 @@
-module dice {
+namespace dice {
     export class Die {
         private sides:number;
         constructor(sides:number) {
