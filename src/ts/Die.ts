@@ -23,21 +23,27 @@ namespace dice {
         }
 
         roll() {
-            return new Result(this.die.roll(), this.modifier);
+            return new Result(this.die.roll(), this.modifier, this.die.toString());
         }
     }
 
-    class Result {
+    export class Result {
         private dieRoll:number;
         private modifier:number;
+        private dieString:string;
 
-        constructor(dieRoll, modifier) {
-            this.dieRoll = dieRoll;
+        constructor(dieRoll, modifier, dieString) {
+            this.dieRoll = dieRoll; 
             this.modifier = modifier;
+            this.dieString = dieString;
         }
 
         get total() {
             return this.dieRoll + this.modifier;
+        }
+
+        toString() {
+            return this.dieString + "+" + this.modifier + ": " + this.total;
         }
     }
 }
