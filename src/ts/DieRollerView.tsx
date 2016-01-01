@@ -12,7 +12,7 @@ namespace components {
         currentResult:string;
     }
 
-    export class DieRollerView extends React.Component<DieRollerViewProps, DieRollerViewState> { //TODO: create props interfaces
+    export class DieRollerView extends React.Component<DieRollerViewProps, DieRollerViewState> {
         private foo:number;
         private roller:Roller;
         constructor(props:DieRollerViewProps) {
