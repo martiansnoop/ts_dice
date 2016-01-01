@@ -10,7 +10,7 @@ namespace dice {
         }
 
         toString() {
-            return "d" + this.sides;
+            return `d${this.sides}`;
         }
     }
 
@@ -33,7 +33,7 @@ namespace dice {
         private dieString:string;
 
         constructor(dieRoll, modifier, dieString) {
-            this.dieRoll = dieRoll; 
+            this.dieRoll = dieRoll;
             this.modifier = modifier;
             this.dieString = dieString;
         }
@@ -43,7 +43,7 @@ namespace dice {
         }
 
         toString() {
-            return this.dieString + "+" + this.modifier + ": " + this.total;
+            return `${this.dieString}+${this.modifier}: ${this.total}`;
         }
     }
 }
