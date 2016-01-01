@@ -6,7 +6,7 @@ namespace components {
         sides:number;
     }
 
-    export class DieViewer extends React.Component<DieViewerProps, any> { //TODO: create props interfaces
+    export class DieRollerView extends React.Component<DieViewerProps, any> { //TODO: create props interfaces
         private foo:number;
         private die:Die;
         constructor(props:DieViewerProps) {

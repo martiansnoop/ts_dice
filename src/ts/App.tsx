@@ -1,3 +1,3 @@
-import DieViewer = components.DieViewer;
+import DieRollerView = components.DieRollerView;
 
-ReactDOM.render(<DieViewer sides={6} />, document.getElementById('container'));
+ReactDOM.render(<DieRollerView sides={6} />, document.getElementById('container'));

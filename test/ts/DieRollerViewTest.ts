@@ -3,11 +3,11 @@
 //TODO figure out why this doesn't work. Maybe stop using karma, as the typescript preprocessor for it
 //seems a little janky
 
-//import DieViewer = components.DieViewer;
+//import DieRollerView = components.DieRollerView;
 //
-//describe("DieViewer", () => {
+//describe("DieRollerView", () => {
 //    it("can exist", () => {
-//        const viewer = new DieViewer({});
+//        const viewer = new DieRollerView({});
 //
 //        const html = viewer.render();
 //        expect(html).toBe("this will be wrong");
