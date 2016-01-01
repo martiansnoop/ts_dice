@@ -16,6 +16,7 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       "src/ts/**/*.ts",
+      "src/ts/**/*.tsx",
       "test/ts/**/*.ts"
     ],
 
@@ -29,6 +30,7 @@ module.exports = function(config) {
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
       "src/**/*.ts": ["typescript"],
+      "src/**/*.tsx": ["typescript"],
       "test/**/*.ts": ["typescript"]
     },
 
@@ -39,6 +41,7 @@ module.exports = function(config) {
         target: "ES5", // (optional) Specify ECMAScript target version: "ES3" (default), or "ES5"
         noImplicitAny: false, // (optional) Warn on expressions and declarations with an implied "any" type.
         removeComments: true, // (optional) Do not emit comments to output.
+        jsx: "react"
 
       },
       // extra typing definitions to pass to the compiler (globs allowed)
@@ -47,7 +50,7 @@ module.exports = function(config) {
       ],
       // transforming the filenames
       transformPath: function(path) {
-        return path.replace(/\.ts$/, ".js");
+        return path.replace(/\.ts/, ".js");
       }
     },
 
