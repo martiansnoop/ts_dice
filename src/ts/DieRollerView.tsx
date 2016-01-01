@@ -8,16 +8,21 @@ namespace components {
         modifier:number;
     }
 
-    export class DieRollerView extends React.Component<DieRollerViewProps, any> { //TODO: create props interfaces
+    export interface DieRollerViewState {
+        currentResult:string;
+    }
+
+    export class DieRollerView extends React.Component<DieRollerViewProps, DieRollerViewState> { //TODO: create props interfaces
         private foo:number;
         private roller:Roller;
         constructor(props:DieRollerViewProps) {
             super(props);
             this.foo = 42;
             this.roller = new Roller(new Die(props.sides), props.modifier);
+            this.state = { currentResult: this.roller.roll().toString() };
         }
         render() {
-            return <div>{this.roller.roll().toString()}</div>;
+            return <div>{this.state.currentResult}</div>;
         }
     }
 }
