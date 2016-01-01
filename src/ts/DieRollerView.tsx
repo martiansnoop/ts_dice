@@ -3,15 +3,15 @@ namespace components {
     import Die = dice.Die;
     import Roller = dice.Roller;
 
-    export interface DieViewerProps {
+    export interface DieRollerViewProps {
         sides:number;
         modifier:number;
     }
 
-    export class DieRollerView extends React.Component<DieViewerProps, any> { //TODO: create props interfaces
+    export class DieRollerView extends React.Component<DieRollerViewProps, any> { //TODO: create props interfaces
         private foo:number;
         private roller:Roller;
-        constructor(props:DieViewerProps) {
+        constructor(props:DieRollerViewProps) {
             super(props);
             this.foo = 42;
             this.roller = new Roller(new Die(props.sides), props.modifier);
