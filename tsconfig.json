@@ -5,7 +5,7 @@
     "preserveConstEnums": true,
     "sourceMap": true,
     "jsx": "react",
-    "outDir": "build/src",
+    "outDir": "build",
     "target": "es5"
   },
   "exclude": [
