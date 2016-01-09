@@ -16,24 +16,19 @@ namespace components {
         private foo:number;
         private modifiedDie:ModifiedDie;
 
-        public handleClick:() => void;
-
         constructor(props:DieRollerViewProps) {
             super(props);
             this.foo = 42;
             this.modifiedDie = new ModifiedDie(new Die(props.sides), props.modifier);
             this.state = { currentResult: this.modifiedDie.roll().toString() };
-            this.handleClick = () => {
-                console.log("this happened", this);
-                this.setState({currentResult: this.modifiedDie.roll().toString()});
-            }
+
         }
         public render() {
-            return <div>{this.state.currentResult} <button onClick={this.handleClick}>Test click</button>  </div>;
+            return <div>{this.state.currentResult} <button onClick={e => this.handleClick()}>Test click</button>  </div>;
         }
-        //public handleClick() {
-        //    console.log("this happened", this);
-        //    this.state.currentResult = "test";
-        //}
+        public handleClick() {
+            console.log("this happened", this);
+            this.setState({currentResult: this.modifiedDie.roll().toString()});
+        }
     }
 }
