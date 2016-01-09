@@ -1,7 +1,7 @@
 
 namespace components {
     import Die = dice.Die;
-    import Roller = dice.Roller;
+    import ModifiedDie = dice.ModifiedDie;
 
     export interface DieRollerViewProps {
         sides:number;
@@ -14,18 +14,18 @@ namespace components {
 
     export class DieRollerView extends React.Component<DieRollerViewProps, DieRollerViewState> {
         private foo:number;
-        private roller:Roller;
+        private modifiedDie:ModifiedDie;
 
         public handleClick:() => void;
 
         constructor(props:DieRollerViewProps) {
             super(props);
             this.foo = 42;
-            this.roller = new Roller(new Die(props.sides), props.modifier);
-            this.state = { currentResult: this.roller.roll().toString() };
+            this.modifiedDie = new ModifiedDie(new Die(props.sides), props.modifier);
+            this.state = { currentResult: this.modifiedDie.roll().toString() };
             this.handleClick = () => {
                 console.log("this happened", this);
-                this.setState({currentResult: this.roller.roll().toString()});
+                this.setState({currentResult: this.modifiedDie.roll().toString()});
             }
         }
         public render() {

@@ -1,5 +1,5 @@
 import Die = dice.Die;
-import Roller = dice.Roller;
+import ModifiedDie = dice.ModifiedDie;
 
 describe("Die", function() {
     it("rolls a number between 1 and numSides", function() {
@@ -30,7 +30,7 @@ describe("Roller", function() {
 
     it("adds the modifier to the die result", function() {
         var critsOnly = new LoadedDie(20, 20);
-        var attackRoller = new Roller(critsOnly, 5);
+        var attackRoller = new ModifiedDie(critsOnly, 5);
         var roll = attackRoller.roll();
 
         expect(roll.total).toBe(20 + 5);

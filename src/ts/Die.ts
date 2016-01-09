@@ -14,36 +14,35 @@ namespace dice {
         }
     }
 
-    export class Roller {
+    export class ModifiedDie {
         private die:Die;
         private modifier:number;
-        constructor(die, modifier) {
+        constructor(die:Die, modifier:number) {
             this.die = die;
-            this.modifier = modifier;
+            this.modifier= modifier;
         }
-
         roll() {
-            return new Result(this.die.roll(), this.modifier, this.die.toString());
+            return new ModifiedResult(this.die.roll(), this.modifier, this.toString())
+        }
+        toString() {
+            return `${this.die.toString()}+${this.modifier}`;
         }
     }
 
-    export class Result {
-        private dieRoll:number;
+    export class ModifiedResult {
+        private roll:number;
         private modifier:number;
         private dieString:string;
-
-        constructor(dieRoll, modifier, dieString) {
-            this.dieRoll = dieRoll;
+        constructor(roll:number, modifier:number, dieString:string) {
+            this.roll = roll;
             this.modifier = modifier;
             this.dieString = dieString;
         }
-
         get total() {
-            return this.dieRoll + this.modifier;
+            return this.roll + this.modifier;
         }
-
         toString() {
-            return `${this.dieString}+${this.modifier}: ${this.total}`;
+            return `${this.dieString}: ${this.total}`;
         }
     }
 }
