@@ -1,3 +1,3 @@
-import DieRollerView = components.DieRollerView;
+import DieView = components.DieView;
 
-ReactDOM.render(<DieRollerView sides={6} modifier={4}/>, document.getElementById('container'));
+ReactDOM.render(<DieView sides={6} modifier={4}/>, document.getElementById('container'));

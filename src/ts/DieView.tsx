@@ -3,20 +3,20 @@ namespace components {
     import Die = dice.Die;
     import ModifiedDie = dice.ModifiedDie;
 
-    export interface DieRollerViewProps {
+    export interface DieViewProps {
         sides:number;
         modifier:number;
     }
 
-    export interface DieRollerViewState {
+    export interface DieViewState {
         currentResult:string;
     }
 
-    export class DieRollerView extends React.Component<DieRollerViewProps, DieRollerViewState> {
+    export class DieView extends React.Component<DieViewProps, DieViewState> {
         private foo:number;
         private modifiedDie:ModifiedDie;
 
-        constructor(props:DieRollerViewProps) {
+        constructor(props:DieViewProps) {
             super(props);
             this.foo = 42;
             this.modifiedDie = new ModifiedDie(new Die(props.sides), props.modifier);
