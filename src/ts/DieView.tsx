@@ -4,6 +4,7 @@ namespace components {
     import ModifiedDie = dice.ModifiedDie;
 
     export interface DieViewProps {
+        key:number; //TODO is there an interface to extend here?
         sides:number;
         modifier:number;
     }
