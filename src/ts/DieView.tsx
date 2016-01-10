@@ -13,12 +13,10 @@ namespace components {
     }
 
     export class DieView extends React.Component<DieViewProps, DieViewState> {
-        private foo:number;
         private modifiedDie:ModifiedDie;
 
         constructor(props:DieViewProps) {
             super(props);
-            this.foo = 42;
             this.modifiedDie = new ModifiedDie(new Die(props.sides), props.modifier);
             this.state = { currentResult: this.modifiedDie.roll().toString() };
 
