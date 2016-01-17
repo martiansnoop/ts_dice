@@ -1,19 +1,20 @@
 {
   "compilerOptions": {
     "noImplicitAny": false,
+    "module": "commonjs",
     "removeComments": false,
     "preserveConstEnums": true,
     "sourceMap": true,
     "jsx": "react",
-    "outDir": "build",
+    "outDir": "tsc_out",
     "target": "es5"
   },
   "exclude": [
     "node_modules"
   ],
   "filesGlob": [
-    "./src/**/*.ts",
-    "./src/**/*.tsx",
-    "./typings/tsd.d.ts"
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "typings/tsd.d.ts"
   ]
 }

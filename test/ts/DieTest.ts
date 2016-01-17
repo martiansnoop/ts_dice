@@ -1,5 +1,6 @@
-import Die = dice.Die;
+import dice = require("../../src/ts/Die.ts");
 import ModifiedDie = dice.ModifiedDie;
+import Die = dice.Die;
 
 describe("Die", function() {
     it("rolls a number between 1 and numSides", function() {
@@ -8,8 +9,8 @@ describe("Die", function() {
         //not deterministic, but not really important for demo purposes
         for(var i = 0; i < 1000; i++) {
             var result = die.roll();
-            expect(result).toBeGreaterThan(0);
-            expect(result).toBeLessThan(sides + 1);
+            expect(result).to.be.greaterThan(0);
+            expect(result).to.be.lessThan(sides + 1);
         }
     })
 });
@@ -33,7 +34,7 @@ describe("Roller", function() {
         var attackRoller = new ModifiedDie(critsOnly, 5);
         var roll = attackRoller.roll();
 
-        expect(roll.total).toBe(20 + 5);
+        expect(roll.total).to.be(20 + 5);
     });
 
 });
