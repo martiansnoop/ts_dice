@@ -6,7 +6,7 @@ module.exports = {
     filename: 'build/bundle.js'
   },
   resolve: {
-    extensions: ['', '.ts']
+    extensions: ['', '.webpack.js', '.web.js', '.ts', '.js']
   },
   module: {
     loaders: [
