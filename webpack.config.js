@@ -1,4 +1,5 @@
 var HtmlWebpackPlugin = require('html-webpack-plugin')
+var webpack = require('webpack')
 
 module.exports = {
   entry: './src/ts/App.tsx',
@@ -19,6 +20,10 @@ module.exports = {
       template: 'src/index.html',
       filename: 'build/index.html',
       inject: 'body'
+    }),
+    new webpack.ProvidePlugin({
+      React: "react",
+      ReactDOM: "react-dom"
     })
   ]
 };
