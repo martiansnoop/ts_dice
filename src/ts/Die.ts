@@ -15,9 +15,9 @@ export class Die {
 
 export class ModifiedDie {
     private die:Die;
-    protected modifier:number;
-    constructor(sides:number, modifier:number) {
-        this.die = new Die(sides);
+    private modifier:number;
+    constructor(die:Die, modifier:number) {
+        this.die = die;
         this.modifier= modifier;
     }
     roll() {
@@ -51,5 +51,5 @@ export function fromString(str:string):ModifiedDie {
     if(count !== 1) throw new Error(`Currently only support 1dX, not ${str}`);
     const sides = +die.split("d")[1];
     const modifier = +str.split("+")[1];
-    return new ModifiedDie(sides, modifier);
+    return new ModifiedDie(new Die(sides), modifier);
 }

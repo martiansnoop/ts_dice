@@ -28,22 +28,11 @@ class LoadedDie extends Die {
     }
 }
 
-class LoadedModifiedDie extends ModifiedDie {
-    private only: number;
-    constructor(sides, modifier, only) {
-        super(sides, modifier);
-        this.only = only;
-    }
-
-    roll() {
-        return new ModifiedResult(this.only, this.modifier, this.toString())
-    }
-}
-
 describe("Roller", function() {
 
     it("adds the modifier to the die result", function() {
-        var attackRoller = new LoadedModifiedDie(20, 5, 20);
+        var critsOnly = new LoadedDie(20, 20);
+        var attackRoller = new ModifiedDie(critsOnly, 5);
         var roll = attackRoller.roll();
 
         expect(roll.total).to.be(20 + 5);
