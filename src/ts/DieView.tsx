@@ -3,7 +3,6 @@ import ModifiedDie = dice.ModifiedDie;
 import Die = dice.Die;
 
 interface DieViewProps {
-    key:number; //TODO is there an interface to extend here?
     modifiedDie:ModifiedDie
 }
 
