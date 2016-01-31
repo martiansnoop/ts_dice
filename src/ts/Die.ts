@@ -16,8 +16,8 @@ export class Die {
 export class ModifiedDie {
     private die:Die;
     private modifier:number;
-    constructor(die:Die, modifier:number) {
-        this.die = die;
+    constructor(sides:number, modifier:number) {
+        this.die = new Die(sides);
         this.modifier= modifier;
     }
     roll() {
@@ -43,4 +43,13 @@ export class ModifiedResult {
     toString() {
         return `${this.dieString}: ${this.total}`;
     }
+}
+
+export function fromString(str:string):ModifiedDie {
+    const die = str.split("+")[0];
+    const count = +die.split("d")[0]; //TODO use this somehow, maybe we return an array from here
+    if(count !== 1) throw new Error(`Currently only support 1dX, not ${str}`);
+    const sides = +die.split("d")[1];
+    const modifier = +str.split("+")[1];
+    return new ModifiedDie(sides, modifier);
 }

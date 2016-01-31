@@ -1,4 +1,5 @@
 import views = require("./DieView.tsx");
+import dice = require("./Die.ts");
 
 //TODO: this will eventually come from user input
 const data:string[] = [
@@ -19,12 +20,7 @@ export class App extends React.Component<AppProps, AppState> {
     }
     render() {
         const dieViews = data.map(dieString => {
-            const die = dieString.split("+")[0];
-            const count = +die.split("d")[0];
-            const sides = +die.split("d")[1];
-            const modifier = +dieString.split("+")[1];
-
-            return <views.DieView key={Math.random()} sides={sides} modifier={modifier}/>;
+            return <views.DieView key={Math.random()} modifiedDie={dice.fromString(dieString)}/>;
         });
 
         return <div> { dieViews } </div>;

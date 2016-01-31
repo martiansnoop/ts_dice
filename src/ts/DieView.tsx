@@ -4,8 +4,7 @@ import Die = dice.Die;
 
 interface DieViewProps {
     key:number; //TODO is there an interface to extend here?
-    sides:number;
-    modifier:number;
+    modifiedDie:ModifiedDie
 }
 
 interface DieViewState {
@@ -17,7 +16,7 @@ export class DieView extends React.Component<DieViewProps, DieViewState> {
 
     constructor(props:DieViewProps) {
         super(props);
-        this.modifiedDie = new ModifiedDie(new Die(props.sides), props.modifier);
+        this.modifiedDie = props.modifiedDie;
         this.state = { currentResult: this.modifiedDie.roll().toString() };
 
     }
