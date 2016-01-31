@@ -26,6 +26,14 @@ export class ModifiedDie {
     toString() {
         return `${this.die.toString()}+${this.modifier}`;
     }
+    static fromString(str:string):ModifiedDie {
+        const die = str.split("+")[0];
+        const count = +die.split("d")[0]; //TODO use this somehow, maybe we return an array from here
+        if(count !== 1) throw new Error(`Currently only support 1dX, not ${str}`);
+        const sides = +die.split("d")[1];
+        const modifier = +str.split("+")[1];
+        return new ModifiedDie(new Die(sides), modifier);
+    }
 }
 
 export class ModifiedResult {
@@ -43,13 +51,4 @@ export class ModifiedResult {
     toString() {
         return `${this.dieString}: ${this.total}`;
     }
-}
-
-export function fromString(str:string):ModifiedDie {
-    const die = str.split("+")[0];
-    const count = +die.split("d")[0]; //TODO use this somehow, maybe we return an array from here
-    if(count !== 1) throw new Error(`Currently only support 1dX, not ${str}`);
-    const sides = +die.split("d")[1];
-    const modifier = +str.split("+")[1];
-    return new ModifiedDie(new Die(sides), modifier);
 }
