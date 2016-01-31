@@ -21,11 +21,9 @@ export class App extends React.Component<AppProps, AppState> {
         super(appProps);
     }
     render() {
-        const dieViews = data.map(({key, die}) => {
-            return <views.DieView key={key} modifiedDie={ModifiedDie.fromString(die)}/>;
-        });
-
-        return <div> { dieViews } </div>;
+        return <div>
+            { data.map(({key, die}) => <views.DieView key={key} modifiedDie={ModifiedDie.fromString(die)}/>) }
+        </div>;
     }
 }
 
