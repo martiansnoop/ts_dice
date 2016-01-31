@@ -1,6 +1,4 @@
-import dice = require("./Die.ts");
-import ModifiedDie = dice.ModifiedDie;
-import Die = dice.Die;
+import {Die, ModifiedDie} from "./Die.ts";
 
 interface DieViewProps {
     modifiedDie:ModifiedDie

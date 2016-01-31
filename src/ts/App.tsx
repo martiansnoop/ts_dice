@@ -1,6 +1,5 @@
-import views = require("./DieView.tsx");
-import dice = require("./Die.ts");
-import ModifiedDie = dice.ModifiedDie;
+import {DieView} from "./DieView.tsx";
+import {ModifiedDie} from "./Die.ts";
 
 //TODO: this will eventually come from user input
 const data:{key: number, die:string}[] = [
@@ -22,7 +21,7 @@ export class App extends React.Component<AppProps, AppState> {
     }
     render() {
         return <div>
-            { data.map(({key, die}) => <views.DieView key={key} modifiedDie={ModifiedDie.fromString(die)}/>) }
+            { data.map(({key, die}) => <DieView key={key} modifiedDie={ModifiedDie.fromString(die)}/>) }
         </div>;
     }
 }
