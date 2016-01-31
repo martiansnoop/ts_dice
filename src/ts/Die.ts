@@ -1,6 +1,6 @@
 export class Die {
     constructor(private sides:number) {}
-    roll() {
+    roll() { //TODO investigate a more random source of randomness
         return Math.floor(Math.random() * this.sides) + 1;
     }
     toString() {
