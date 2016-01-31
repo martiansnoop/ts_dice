@@ -15,7 +15,7 @@ export class Die {
 
 export class ModifiedDie {
     private die:Die;
-    private modifier:number;
+    protected modifier:number;
     constructor(sides:number, modifier:number) {
         this.die = new Die(sides);
         this.modifier= modifier;

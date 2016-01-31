@@ -1,6 +1,7 @@
 import dice = require("../../src/ts/Die.ts");
 import ModifiedDie = dice.ModifiedDie;
 import Die = dice.Die;
+import {ModifiedResult} from "../../src/ts/Die";
 
 describe("Die", function() {
     it("rolls a number between 1 and numSides", function() {
@@ -27,11 +28,22 @@ class LoadedDie extends Die {
     }
 }
 
+class LoadedModifiedDie extends ModifiedDie {
+    private only: number;
+    constructor(sides, modifier, only) {
+        super(sides, modifier);
+        this.only = only;
+    }
+
+    roll() {
+        return new ModifiedResult(this.only, this.modifier, this.toString())
+    }
+}
+
 describe("Roller", function() {
 
     it("adds the modifier to the die result", function() {
-        var critsOnly = new LoadedDie(20, 20);
-        var attackRoller = new ModifiedDie(critsOnly, 5);
+        var attackRoller = new LoadedModifiedDie(20, 5, 20);
         var roll = attackRoller.roll();
 
         expect(roll.total).to.be(20 + 5);
