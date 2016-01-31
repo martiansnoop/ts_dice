@@ -1,8 +1,5 @@
 export class Die {
-    private sides:number;
-    constructor(sides:number) {
-        this.sides = sides;
-    }
+    constructor(private sides:number) {}
 
     roll() {
         return Math.floor(Math.random() * this.sides) + 1;
@@ -14,12 +11,7 @@ export class Die {
 }
 
 export class ModifiedDie {
-    private die:Die;
-    private modifier:number;
-    constructor(die:Die, modifier:number) {
-        this.die = die;
-        this.modifier= modifier;
-    }
+    constructor(private die:Die, private modifier:number) {}
     roll() {
         return new ModifiedResult(this.die.roll(), this.modifier, this.toString())
     }
@@ -37,14 +29,7 @@ export class ModifiedDie {
 }
 
 export class ModifiedResult {
-    private roll:number;
-    private modifier:number;
-    private dieString:string;
-    constructor(roll:number, modifier:number, dieString:string) {
-        this.roll = roll;
-        this.modifier = modifier;
-        this.dieString = dieString;
-    }
+    constructor(private roll:number, private modifier:number, private dieString:string) {}
     get total() {
         return this.roll + this.modifier;
     }
