@@ -3,8 +3,8 @@ var webpack = require("webpack");
 
 module.exports = {
   entry: {
-      app: "./src/ts/App.tsx",
-      vendor: ["react", "react-dom"]
+      app: "./src/ts/index.tsx",
+      vendor: ["react", "react-dom", "redux", "react-redux"]
   },
   output: {
     filename: "build/bundle.js"
