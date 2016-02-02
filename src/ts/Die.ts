@@ -9,7 +9,8 @@ export class Die {
 }
 
 export class ModifiedDie {
-    constructor(private die:Die, private modifier:number) {}
+    private _key;
+    constructor(private die:Die, private modifier:number) { this._key = Math.random()}
     roll() {
         return new ModifiedResult(this.die.roll(), this.modifier, this.toString())
     }
@@ -23,6 +24,9 @@ export class ModifiedDie {
         const sides = +die.split("d")[1];
         const modifier = +str.split("+")[1];
         return new ModifiedDie(new Die(sides), modifier);
+    }
+    get key() {
+        return this._key;
     }
 }
 
