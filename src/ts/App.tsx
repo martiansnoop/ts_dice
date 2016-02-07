@@ -1,5 +1,4 @@
-import {DieView} from "./DieView.tsx";
-import {ModifiedDie} from "./Die.ts";
+import {DieListView} from "./DieListView.tsx";
 import {connect} from "react-redux";
 
 //can't use props interface here because something something redux magic thing
@@ -8,10 +7,7 @@ class App extends React.Component<any, any> {
         super(appProps);
     }
     render() {
-        const {dice} = this.props;
-        return <div>
-            { dice.map(die => <DieView key={die.key} modifiedDie={die}/>) }
-        </div>;
+        return <DieListView dice={this.props.dice} />
     }
 }
 
