@@ -1,3 +1,5 @@
+import {uniqueId} from "lodash";
+
 export class Die {
     constructor(private sides:number) {}
     roll() { //TODO investigate a more random source of randomness
@@ -10,7 +12,7 @@ export class Die {
 
 export class ModifiedDie {
     private _key;
-    constructor(private die:Die, private modifier:number) { this._key = Math.random()}
+    constructor(private die:Die, private modifier:number) { this._key = _.uniqueId()}
     roll() {
         return new ModifiedResult(this.die.roll(), this.modifier, this.toString())
     }
