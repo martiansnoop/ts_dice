@@ -15,7 +15,6 @@ export class DieView extends React.Component<DieViewProps, DieViewState> {
         super(props);
         this.modifiedDie = props.modifiedDie;
         this.state = { currentResult: this.modifiedDie.roll().toString() };
-
     }
     public render() {
         return <div>
