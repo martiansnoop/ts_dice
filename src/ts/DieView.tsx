@@ -18,7 +18,10 @@ export class DieView extends React.Component<DieViewProps, DieViewState> {
 
     }
     public render() {
-        return <div>{this.state.currentResult} <button onClick={e => this.handleClick()}>Test click</button>  </div>;
+        return <div>
+            <div>{this.state.currentResult}</div>
+            <button onClick={e => this.handleClick()}>Test click</button>
+        </div>;
     }
     public handleClick() {
         console.log("this happened", this);
