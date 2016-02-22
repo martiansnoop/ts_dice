@@ -5,19 +5,9 @@ import {isRollDie} from "./ActionTypes";
 import {cloneDeep} from "lodash";
 
 
-const d20 = ModifiedDie.fromString("1d20+5");
-const d8 = ModifiedDie.fromString("1d8+4");
-const rolls = {
-    [d8.key]: d8.roll(),
-    [d20.key]: d20.roll()
-};
 const initialState = {
-    dice: [
-        d8,
-        d20
-    ],
-    dieString: "1d20+5,1d8+4",
-    rolls
+    dice: [],
+    rolls: {}
 };
 
 export function diceApp(state = initialState, action:Action):any {

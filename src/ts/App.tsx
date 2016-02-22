@@ -5,7 +5,6 @@ import {selectDice, rollDie} from "./ActionTypes.ts";
 import {ModifiedDie} from "./Die";
 
 interface Props {
-    dieString?:string;
     dice?:ModifiedDie[];
     rolls?:any;
     onNewDiceSelected?(dieString):void;
@@ -18,8 +17,7 @@ class App extends React.Component<Props, State> {
     }
     render() {
         return <div>
-            <DieSelector dieString={this.props.dieString}
-                         onNewDiceSelected={this.props.onNewDiceSelected}/>
+            <DieSelector onNewDiceSelected={this.props.onNewDiceSelected}/>
             <DieListView dice={this.props.dice} requestRoll={this.props.onRequestRoll} rolls={this.props.rolls} />
         </div>;
     }
@@ -28,7 +26,6 @@ class App extends React.Component<Props, State> {
 function mapStateToProps(state) {
     return {
         dice:state.dice,
-        dieString:state.dieString,
         rolls:state.rolls
     }
 }
