@@ -1,3 +1,4 @@
+import {USE_DICE} from "./Strings";
 interface Props {
     dieString:string;
     onNewDiceSelected(dieString):void;
@@ -15,7 +16,7 @@ export class DieSelector extends React.Component<Props, State> {
     render() {
         return <div>
                 <input type="text" defaultValue={this.props.dieString} onChange={e => this.onSelectionChange(e)}/>
-                <button onClick={(e) => this.submitChange(e)}>Do thing</button>
+                <button onClick={(e) => this.submitChange(e)}>{USE_DICE}</button>
             </div>
     }
     submitChange(event) {

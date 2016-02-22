@@ -1,4 +1,5 @@
 import {Die, ModifiedDie, ModifiedResult} from "./Die.ts";
+import {ROLL, ROLLED} from "./Strings";
 
 interface DieViewProps {
     modifiedDie:ModifiedDie;
@@ -18,8 +19,8 @@ export class DieView extends React.Component<DieViewProps, DieViewState> {
     public render() {
         return <div>
             <div>{this.modifiedDie.toString()}</div>
-            <div>Rolled: {this.props.rolls.total}</div>
-            <button onClick={e => this.handleClick()}>Test click</button>
+            <div>{ROLLED}: {this.props.rolls.total}</div>
+            <button onClick={e => this.handleClick()}>{ROLL}</button>
         </div>;
     }
     public handleClick() {
