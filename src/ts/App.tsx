@@ -1,7 +1,7 @@
 import {DieListView} from "./DieListView.tsx";
 import {DieSelector} from "./DieSelector.tsx";
 import {connect} from "react-redux";
-import {selectDice} from "./ActionTypes.ts";
+import {selectDice, rollDie} from "./ActionTypes.ts";
 
 //can't use props interface here because something something redux magic thing
 class App extends React.Component<any, any> {
@@ -12,7 +12,7 @@ class App extends React.Component<any, any> {
         return <div>
             <DieSelector dieString={this.props.dieString}
                          onNewDiceSelected={this.props.onNewDiceSelected}/>
-            <DieListView dice={this.props.dice} />
+            <DieListView dice={this.props.dice} requestRoll={this.props.onRequestRoll} rolls={this.props.rolls} />
         </div>;
     }
 }
@@ -20,13 +20,15 @@ class App extends React.Component<any, any> {
 function mapStateToProps(state) {
     return {
         dice:state.dice,
-        dieString:state.dieString
+        dieString:state.dieString,
+        rolls:state.rolls
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-        onNewDiceSelected: (dieString) => dispatch(selectDice(dieString))
+        onNewDiceSelected: (dieString) => dispatch(selectDice(dieString)),
+        onRequestRoll: (die) => dispatch(rollDie(die))
     };
 }
 

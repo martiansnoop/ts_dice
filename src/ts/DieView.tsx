@@ -1,12 +1,12 @@
-import {Die, ModifiedDie} from "./Die.ts";
+import {Die, ModifiedDie, ModifiedResult} from "./Die.ts";
 
 interface DieViewProps {
-    modifiedDie:ModifiedDie
+    modifiedDie:ModifiedDie;
+    requestRoll(die:ModifiedDie):void;
+    rolls: ModifiedResult;
 }
 
-interface DieViewState {
-    currentResult:string;
-}
+interface DieViewState { }
 
 export class DieView extends React.Component<DieViewProps, DieViewState> {
     private modifiedDie:ModifiedDie;
@@ -14,16 +14,15 @@ export class DieView extends React.Component<DieViewProps, DieViewState> {
     constructor(props:DieViewProps) {
         super(props);
         this.modifiedDie = props.modifiedDie;
-        this.state = { currentResult: this.modifiedDie.roll().toString() };
     }
     public render() {
         return <div>
-            <div>{this.state.currentResult}</div>
+            <div>{this.modifiedDie.toString()}</div>
+            <div>Rolled: {this.props.rolls.total}</div>
             <button onClick={e => this.handleClick()}>Test click</button>
         </div>;
     }
     public handleClick() {
-        console.log("this happened", this);
-        this.setState({currentResult: this.modifiedDie.roll().toString()});
+        this.props.requestRoll(this.modifiedDie);
     }
 }

@@ -1,3 +1,4 @@
+import {ModifiedDie} from "./Die.ts";
 
 export const SELECT_DICE = "SELECT_DICE";
 export const ROLL_DICE = "ROLL_DICE";
@@ -7,6 +8,9 @@ export interface Action {
 }
 export interface SelectDiceAction extends Action {
     dieString:string;
+}
+export interface RollDieAction extends Action {
+    die:ModifiedDie;
 }
 
 export function selectDice(dieString):SelectDiceAction {
@@ -20,8 +24,13 @@ export function isSelectDice(action:Action): action is SelectDiceAction {
     return "dieString" in action;
 }
 
-export function rollDice():Action {
+export function rollDie(die:ModifiedDie):RollDieAction {
     return {
-        type: ROLL_DICE
+        type: ROLL_DICE,
+        die
     }
+}
+
+export function isRollDie(action:Action): action is RollDieAction {
+    return "die" in action;
 }
