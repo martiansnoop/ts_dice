@@ -25,7 +25,14 @@ export function diceApp(state = initialState, action:Action):any {
     console.log("action:", action);
     if(isSelectDice(action)) {
         const dice = action.dieString.split(",").map(str => ModifiedDie.fromString(str));
-        return { dice };
+        const rolls = dice.reduce((memo, die) => {
+            memo[die.key] = die.roll();
+            return memo;
+        }, {});
+        const newState = _.cloneDeep(state);
+        newState.dice = dice;
+        newState.rolls = rolls;
+        return newState;
     }
     else if (isRollDie(action)) {
         const {die} = action;
