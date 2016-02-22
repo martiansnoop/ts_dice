@@ -32,5 +32,6 @@ module.exports = {
       React: "react",
       ReactDOM: "react-dom"
     })
-  ]
+  ],
+  devtool: "source-map"
 };
