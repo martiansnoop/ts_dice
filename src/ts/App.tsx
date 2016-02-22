@@ -2,9 +2,17 @@ import {DieListView} from "./DieListView.tsx";
 import {DieSelector} from "./DieSelector.tsx";
 import {connect} from "react-redux";
 import {selectDice, rollDie} from "./ActionTypes.ts";
+import {ModifiedDie} from "./Die";
 
-//can't use props interface here because something something redux magic thing
-class App extends React.Component<any, any> {
+interface Props {
+    dieString?:string;
+    dice?:ModifiedDie[];
+    rolls?:any;
+    onNewDiceSelected?(dieString):void;
+    onRequestRoll?(die:ModifiedDie):void;
+}
+interface State { }
+class App extends React.Component<Props, State> {
     constructor(appProps) {
         super(appProps);
     }
