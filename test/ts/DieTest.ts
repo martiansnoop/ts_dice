@@ -1,7 +1,4 @@
-import dice = require("../../src/ts/Die.ts");
-import ModifiedDie = dice.ModifiedDie;
-import Die = dice.Die;
-import {ModifiedResult} from "../../src/ts/Die";
+import {Die, ModifiedDie, ModifiedResult} from "../../src/ts/Die.ts";
 
 describe("Die", function() {
     it("rolls a number between 1 and numSides", function() {

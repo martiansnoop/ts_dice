@@ -12,7 +12,7 @@ export class Die {
 
 export class ModifiedDie {
     private _key;
-    constructor(private die:Die, private modifier:number) { this._key = _.uniqueId()}
+    constructor(private die:Die, private modifier:number) { this._key = uniqueId()}
     roll() {
         return new ModifiedResult(this.die.roll(), this.modifier, this.toString())
     }

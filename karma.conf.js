@@ -5,19 +5,18 @@ module.exports = function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: "",
+    basePath: "./test",
 
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ["jasmine"],
+    frameworks: ["mocha"],
 
 
     // list of files / patterns to load in the browser
     files: [
-      "src/ts/**/*.ts",
-      "src/ts/**/*.tsx",
-      "test/ts/**/*.ts"
+      "ts/**/*.ts",
+      "ts/**/*.tsx"
     ],
 
 
@@ -29,29 +28,8 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      "src/**/*.ts": ["typescript"],
-      "src/**/*.tsx": ["typescript"],
-      "test/**/*.ts": ["typescript"]
-    },
-
-    typescriptPreprocessor: {
-      // options passed to the typescript compiler
-      options: {
-        sourceMap: false, // (optional) Generates corresponding .map file.
-        target: "ES5", // (optional) Specify ECMAScript target version: "ES3" (default), or "ES5"
-        noImplicitAny: false, // (optional) Warn on expressions and declarations with an implied "any" type.
-        removeComments: true, // (optional) Do not emit comments to output.
-        jsx: "react"
-
-      },
-      // extra typing definitions to pass to the compiler (globs allowed)
-      typings: [
-        "typings/tsd.d.ts"
-      ],
-      // transforming the filenames
-      transformPath: function(path) {
-        return path.replace(/\.ts/, ".js");
-      }
+      "ts/**/*.ts": ["webpack"],
+      "ts/**/*.tsx": ["webpack"]
     },
 
 
@@ -85,6 +63,31 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: true
+    singleRun: true,
+
+    webpack: {
+      // karma watches the test entry points
+      // (you don't need to specify the entry option)
+      // webpack watches dependencies
+
+      // webpack configuration
+      module: {
+        loaders: [
+          { test: /\.tsx?$/, loader: "ts-loader" }
+        ]
+      }
+    },
+
+    webpackMiddleware: {
+      // webpack-dev-middleware configuration
+      // i. e.
+      noInfo: true
+    },
+
+    plugins: [
+      require("karma-webpack"),
+      require("karma-mocha"),
+      require("karma-chrome-launcher")
+    ]
   })
 };
