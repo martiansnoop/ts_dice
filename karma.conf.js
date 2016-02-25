@@ -1,5 +1,6 @@
 // Karma configuration
 // Generated on Sun Jun 28 2015 15:22:35 GMT-0700 (PDT)
+var webpack = require("webpack");
 
 module.exports = function(config) {
     config.set({
@@ -74,7 +75,16 @@ module.exports = function(config) {
                 loaders: [
                     {test: /\.tsx?$/, loader: "ts-loader"}
                 ]
-            }
+            },
+            resolve: {
+                extensions: ["", ".ts", ".js"]
+            },
+            plugins: [
+                new webpack.ProvidePlugin({
+                    React: "react",
+                    ReactDOM: "react-dom"
+                })
+            ]
         },
 
         webpackMiddleware: {
