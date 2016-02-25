@@ -27,10 +27,6 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({
         name: "vendor",
         filename: "build/vendor.bundle.js"
-    }),
-    new webpack.ProvidePlugin({
-      React: "react",
-      ReactDOM: "react-dom"
     })
   ],
   devtool: "source-map"

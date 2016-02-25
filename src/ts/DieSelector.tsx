@@ -1,4 +1,5 @@
 import {USE_DICE} from "./Strings";
+import React = require("react");
 
 const initialDiceString = "1d20+5,1d8+4";
 

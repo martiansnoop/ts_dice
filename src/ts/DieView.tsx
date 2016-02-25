@@ -1,5 +1,6 @@
 import {Die, ModifiedDie, ModifiedResult} from "./Die.ts";
 import {ROLL, ROLLED} from "./Strings";
+import React = require("react");
 
 interface DieViewProps {
     modifiedDie:ModifiedDie;

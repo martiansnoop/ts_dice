@@ -78,13 +78,7 @@ module.exports = function(config) {
             },
             resolve: {
                 extensions: ["", ".ts", ".js"]
-            },
-            plugins: [
-                new webpack.ProvidePlugin({
-                    React: "react",
-                    ReactDOM: "react-dom"
-                })
-            ]
+            }
         },
 
         webpackMiddleware: {

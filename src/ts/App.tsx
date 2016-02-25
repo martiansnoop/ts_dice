@@ -3,6 +3,7 @@ import {DieSelector} from "./DieSelector.tsx";
 import {connect} from "react-redux";
 import {selectDice, rollDie} from "./ActionTypes.ts";
 import {ModifiedDie} from "./Die";
+import React = require("react");
 
 interface Props {
     dice?:ModifiedDie[];
