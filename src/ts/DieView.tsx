@@ -2,18 +2,18 @@ import {Die, ModifiedDie, ModifiedResult} from "./Die.ts";
 import {ROLL, ROLLED} from "./Strings";
 import React = require("react");
 
-interface DieViewProps {
+interface Props {
     modifiedDie:ModifiedDie;
     requestRoll(die:ModifiedDie):void;
     rolls: ModifiedResult;
 }
 
-interface DieViewState { }
+interface State { }
 
-export class DieView extends React.Component<DieViewProps, DieViewState> {
+export class DieView extends React.Component<Props, State> {
     private modifiedDie:ModifiedDie;
 
-    constructor(props:DieViewProps) {
+    constructor(props:Props) {
         super(props);
         this.modifiedDie = props.modifiedDie;
     }
