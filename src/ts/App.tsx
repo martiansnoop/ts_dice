@@ -19,7 +19,8 @@ class App extends React.Component<Props, State> {
     render() {
         return <div>
             <DieSelector onNewDiceSelected={this.props.onNewDiceSelected}/>
-            <DieListView dice={this.props.dice} requestRoll={this.props.onRequestRoll} rolls={this.props.rolls} />
+            <DieListView dice={this.props.dice}
+                         requestRoll={this.props.onRequestRoll} rolls={this.props.rolls} />
         </div>;
     }
 }

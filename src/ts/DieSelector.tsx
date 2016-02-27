@@ -18,7 +18,9 @@ export class DieSelector extends React.Component<Props, State> {
     }
     render() {
         return <div>
-                <input type="text" defaultValue={this.state.dieString} onChange={e => this.onSelectionChange(e)}/>
+                <input type="text"
+                       defaultValue={this.state.dieString}
+                       onChange={e => this.onSelectionChange(e)}/>
                 <button onClick={(e) => this.submitChange(e)}>{USE_DICE}</button>
             </div>
     }
