@@ -2,6 +2,7 @@
   "name": "tsc_dice",
   "version": "1.0.0",
   "description": "A dice app that I'm using to learn react",
+  "private": true,
   "repository": "https://github.com/martiansnoop/ts_dice",
   "main": "src/ts/index.ts",
   "directories": {
