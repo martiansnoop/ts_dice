@@ -9,6 +9,7 @@
     "strictNullChecks": true,
     "jsx": "react",
     "outDir": "tsc_out",
+    "pretty": true,
     "target": "es5"
   },
   "exclude": [
