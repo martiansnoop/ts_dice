@@ -1,4 +1,4 @@
-import {Action, SELECT_DICE, ROLL_DICE} from "./ActionTypes.ts"
+import {Action, SELECT_DICE, ROLL_DICE} from "./ActionTypes"
 import {isSelectDice} from "./ActionTypes";
 import {ModifiedDie} from "./Die";
 import {isRollDie} from "./ActionTypes";

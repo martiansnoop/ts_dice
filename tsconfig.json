@@ -5,6 +5,7 @@
     "removeComments": false,
     "preserveConstEnums": true,
     "sourceMap": true,
+    "skipLibCheck": true,
     "jsx": "react",
     "outDir": "tsc_out",
     "target": "es5"

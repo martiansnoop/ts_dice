@@ -1,7 +1,7 @@
 import {diceApp} from "./Reducers";
 import {createStore} from "redux";
 import {Provider} from "react-redux";
-import App from "./App.tsx";
+import App from "./App";
 import React = require("react");
 import ReactDOM = require("react-dom");
 

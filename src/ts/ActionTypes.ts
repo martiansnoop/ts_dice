@@ -1,4 +1,4 @@
-import {ModifiedDie} from "./Die.ts";
+import {ModifiedDie} from "./Die";
 
 export const SELECT_DICE = "SELECT_DICE";
 export const ROLL_DICE = "ROLL_DICE";

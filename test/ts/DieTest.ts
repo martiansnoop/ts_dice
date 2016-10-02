@@ -1,4 +1,4 @@
-import {Die, ModifiedDie, ModifiedResult} from "../../src/ts/Die.ts";
+import {Die, ModifiedDie, ModifiedResult} from "../../src/ts/Die";
 
 describe("Die", function() {
     it("rolls a number between 1 and numSides", function() {

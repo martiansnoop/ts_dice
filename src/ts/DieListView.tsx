@@ -1,4 +1,4 @@
-import {DieView} from "./DieView.tsx";
+import {DieView} from "./DieView";
 import React = require("react");
 
 export const DieListView = ({dice, requestRoll, rolls}) => <div>

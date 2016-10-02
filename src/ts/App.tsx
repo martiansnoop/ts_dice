@@ -1,15 +1,15 @@
-import {DieListView} from "./DieListView.tsx";
-import {DieSelector} from "./DieSelector.tsx";
-import {connect} from "react-redux";
-import {selectDice, rollDie} from "./ActionTypes.ts";
+import {DieListView} from "./DieListView";
+import {DieSelector} from "./DieSelector";
+import {selectDice, rollDie} from "./ActionTypes";
 import {ModifiedDie} from "./Die";
 import React = require("react");
+import {connect} from "react-redux"
 
 interface Props {
-    dice?:ModifiedDie[];
-    rolls?:any;
-    onNewDiceSelected?(dieString):void;
-    onRequestRoll?(die:ModifiedDie):void;
+    dice:ModifiedDie[];
+    rolls:any;
+    onNewDiceSelected(dieString):void;
+    onRequestRoll(die:ModifiedDie):void;
 }
 interface State { }
 class App extends React.Component<Props, State> {
@@ -38,5 +38,6 @@ function mapDispatchToProps(dispatch) {
         onRequestRoll: (die) => dispatch(rollDie(die))
     };
 }
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

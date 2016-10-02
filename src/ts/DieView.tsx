@@ -1,4 +1,4 @@
-import {Die, ModifiedDie, ModifiedResult} from "./Die.ts";
+import {Die, ModifiedDie, ModifiedResult} from "./Die";
 import {ROLL, ROLLED} from "./Strings";
 import React = require("react");
 
