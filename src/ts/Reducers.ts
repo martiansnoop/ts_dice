@@ -6,7 +6,7 @@ import {cloneDeep} from "lodash";
 
 
 const initialState = {
-    dice: [],
+    dice: [] as ModifiedDie[],
     rolls: {}
 };
 

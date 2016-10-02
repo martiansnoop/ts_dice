@@ -6,6 +6,7 @@
     "preserveConstEnums": true,
     "sourceMap": true,
     "skipLibCheck": true,
+    "strictNullChecks": true,
     "jsx": "react",
     "outDir": "tsc_out",
     "target": "es5"
